@@ -1,1 +1,1 @@
-# Python-DataStructures
+Python has primitive (or basic) data structures such as floats, integers, strings, and Booleans. Python also has non-primitive data structures such as lists, tuples, dictionaries, and sets. Non-primitive data structures store a collection of values in various formats rather than a single value.
