@@ -32,9 +32,12 @@ MANIFEST
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+dict1.json
+sample.json
 
 # Installer logs
 pip-log.txt
+.idea/
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
