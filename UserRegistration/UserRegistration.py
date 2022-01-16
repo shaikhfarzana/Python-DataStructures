@@ -19,7 +19,7 @@ def main():
        Return:
            Returns nothing.
     """
-    user_input = input('Enter Valid Last Name : ')
+    user_input = input('Enter Valid EmailId : ')
     regex(user_input)
 
 
@@ -32,16 +32,16 @@ def regex(string):
        Return:
            Returns nothing.
     """
-    patt = r'^[A-Z][a-z]{3,30}'
+    patt = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
     # re.fullmatch function matches from beginning to end.
     matches = re.fullmatch(patt, string)
     if matches:
-        logger.debug('Last name is Valid')
-        logger.info(f"executed Successfully {string}")
+        logger.debug('Email-Id is Valid')
+        logger.info(f"Executed Successfully {string}")
     else:
         try:
-            raise Exception('Wrong Pattern Entered atleast length should be 4 and first alphabet should be capital ')
+            raise Exception('Wrong Pattern Entered, should follow the Email-Id syntax')
         except Exception as e:
             print(e)
             logger.error(e)
