@@ -19,7 +19,7 @@ def main():
        Return:
            Returns nothing.
     """
-    user_input = input('Enter Valid EmailId : ')
+    user_input = input('Enter Valid Mobile Number : ')
     regex(user_input)
 
 
@@ -32,16 +32,16 @@ def regex(string):
        Return:
            Returns nothing.
     """
-    patt = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    patt = r'([0-9]{2,})+(\s[0-9]{10})+'
 
     # re.fullmatch function matches from beginning to end.
     matches = re.fullmatch(patt, string)
     if matches:
-        logger.debug('Email-Id is Valid')
+        logger.debug('Mobile Number is Valid')
         logger.info(f"Executed Successfully {string}")
     else:
         try:
-            raise Exception('Wrong Pattern Entered, should follow the Email-Id syntax')
+            raise Exception('Wrong Pattern Entered, should follow the Mobile number syntax')
         except Exception as e:
             print(e)
             logger.error(e)
