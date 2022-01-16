@@ -19,7 +19,7 @@ def main():
        Return:
            Returns nothing.
     """
-    user_input = input('Enter Valid First Name : ')
+    user_input = input('Enter Valid Last Name : ')
     regex(user_input)
 
 
@@ -37,11 +37,11 @@ def regex(string):
     # re.fullmatch function matches from beginning to end.
     matches = re.fullmatch(patt, string)
     if matches:
-        logger.debug('First name is Valid')
+        logger.debug('Last name is Valid')
         logger.info(f"executed Successfully {string}")
     else:
         try:
-            raise Exception('Wrong Pattern Entered least 4 len and only first alphabet capital')
+            raise Exception('Wrong Pattern Entered atleast length should be 4 and first alphabet should be capital ')
         except Exception as e:
             print(e)
             logger.error(e)
