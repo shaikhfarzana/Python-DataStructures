@@ -22,7 +22,7 @@ def sort_dictionary():
 
     d = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
     logging.debug('Original dictionary : {}'.format(d))
-    sorted_d = sorted(d.items(), key=operator.itemgetter(1))
+    sorted_d = sorted(d.items(), key=operator.itemgetter(0))
     logging.debug('Dictionary in ascending order by value : {}'.format(sorted_d))
     sorted_d = dict(sorted(d.items(), key=operator.itemgetter(1), reverse=True))
     logging.debug('Dictionary in descending order by value : {}'.format(sorted_d))
