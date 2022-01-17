@@ -19,7 +19,7 @@ def main():
        Return:
            Returns nothing.
     """
-    logger.debug("Password should be of minimum 8 characters, atleast 1 uppercase, one digit and a special character")
+    logger.debug('Password should be of minimum 8 characters, atleast 1 uppercase alphabet, one digit and a special character')
     user_input = input('Enter The Valid Password : ')
     regex(user_input)
 
