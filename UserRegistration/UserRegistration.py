@@ -32,9 +32,12 @@ def main():
     # logger.debug('Password must be of minimum 8 character and atleast contain 1 uppercase alphabet:')
     # user_input = input('Enter Valid Password: ')
     # logger.debug("{}".format(password_rule2_regex(user_input)))
-    logger.debug('Password must be of minimum 8 characters,atleast contain 1 uppercase alphabet and a digit :')
-    user_input = input('Enter Valid Password: ')
-    logger.debug("{}".format(password_rule3_regex(user_input)))
+    # logger.debug('Password must be of minimum 8 characters,atleast contain 1 uppercase alphabet and a digit :')
+    # user_input = input('Enter Valid Password: ')
+    # logger.debug("{}".format(password_rule3_regex(user_input)))
+    logger.debug('Password should be of minimum 8 characters, atleast 1 uppercase alphabet, one digit and a special character')
+    user_input = input('Enter The Valid Password : ')
+    logger.debug("{}".format(password_rule4_regex(user_input)))
 
 
 def first_name_regex(user_string):
@@ -160,6 +163,24 @@ def password_rule3_regex(user_string):
            Returns boolean value.
     """
     pattern = r'(?=.*[0-9])(?=.*[A-Z]).{8,}'
+    # re.fullmatch function matches from beginning to end.
+    matches = re.fullmatch(pattern, user_string)
+    if matches:
+        return True
+    else:
+        return False
+
+
+def password_rule4_regex(user_string):
+    """
+       Description:
+           Function is used to check whether the password has minimum 8 characters, atleast 1 uppercase alphabet, one digit and a special character.
+       Parameter:
+          String as a parameter required.
+       Return:
+           Returns boolean value.
+    """
+    pattern = r'(?=.*[~!@#$%^&*_])(?=.*[0-9])(?=.*[A-Z]).{8,}'
     # re.fullmatch function matches from beginning to end.
     matches = re.fullmatch(pattern, user_string)
     if matches:
