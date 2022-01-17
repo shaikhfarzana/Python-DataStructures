@@ -18,14 +18,14 @@ def main():
        Return:
            Returns nothing.
     """
-    user_input = input('Enter Valid First Name : ')
-    logger.debug("{}".format(first_name_regex(user_input)))
-    user_input = input('Enter Valid Last Name : ')
-    logger.debug("{}".format(last_name_regex(user_input)))
-    user_input = input('Enter Valid EmailId : ')
-    logger.debug("{}".format(email_id_regex(user_input)))
-    user_input = input('Enter Valid Mobile Number : ')
-    logger.debug("{}".format(mobile_number_regex(user_input)))
+    # user_input = input('Enter Valid First Name : ')
+    # logger.debug("{}".format(first_name_regex(user_input)))
+    # user_input = input('Enter Valid Last Name : ')
+    # logger.debug("{}".format(last_name_regex(user_input)))
+    # user_input = input('Enter Valid EmailId : ')
+    # logger.debug("{}".format(email_id_regex(user_input)))
+    # user_input = input('Enter Valid Mobile Number : ')
+    # logger.debug("{}".format(mobile_number_regex(user_input)))
     # logger.debug('Password must be of minimum 8 character:')
     # user_input = input('Enter Valid Password:')
     # logger.debug("{}".format(password_rule1_regex(user_input)))
@@ -35,9 +35,14 @@ def main():
     # logger.debug('Password must be of minimum 8 characters,atleast contain 1 uppercase alphabet and a digit :')
     # user_input = input('Enter Valid Password: ')
     # logger.debug("{}".format(password_rule3_regex(user_input)))
-    logger.debug('Password should be of minimum 8 characters, atleast 1 uppercase alphabet, one digit and a special character')
-    user_input = input('Enter The Valid Password : ')
-    logger.debug("{}".format(password_rule4_regex(user_input)))
+    # logger.debug('Password should be of minimum 8 characters, atleast 1 uppercase alphabet, one digit and a special character')
+    # user_input = input('Enter The Valid Password : ')
+    # logger.debug("{}".format(password_rule4_regex(user_input)))
+    sample_emailid = ['abc@yahoo.com', 'abc-100@yahoo.com', 'abc.100@yahoo.com', 'abc111@abccom', 'abc-100@abc.net',
+                      'abc.100@abc.com.au', 'abc@1.com', 'abc@gmail.com.com', 'abc+100@gmail.com']
+    for i in sample_emailid:
+        email_id_regex(i)
+    logger.debug("{}".format(email_id_regex(i)))
 
 
 def first_name_regex(user_string):
