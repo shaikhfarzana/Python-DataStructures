@@ -26,6 +26,9 @@ def main():
     logger.debug("{}".format(email_id_regex(user_input)))
     user_input = input('Enter Valid Mobile Number : ')
     logger.debug("{}".format(mobile_number_regex(user_input)))
+    logger.debug('Password must be of minimum 8 character:')
+    user_input = input('Enter Valid Password:')
+    logger.debug("{}".format(password_rule1_regex(user_input)))
 
 
 def first_name_regex(user_string):
@@ -95,6 +98,25 @@ def mobile_number_regex(user_string):
            Returns boolean value.
     """
     pattern = r'([0-9]{2,})+(\s[0-9]{10})+'
+
+    # re.fullmatch function matches from beginning to end.
+    matches = re.fullmatch(pattern, user_string)
+    if matches:
+        return True
+    else:
+        return False
+
+
+def password_rule1_regex(user_string):
+    """
+       Description:
+           Function is used to check whether the password has minimum 8 characters or not.
+       Parameter:
+          String as a parameter required.
+       Return:
+           Returns boolean value.
+    """
+    pattern = r'(.{8,})+'
 
     # re.fullmatch function matches from beginning to end.
     matches = re.fullmatch(pattern, user_string)
