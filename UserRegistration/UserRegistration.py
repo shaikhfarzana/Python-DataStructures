@@ -24,6 +24,8 @@ def main():
     logger.debug("{}".format(last_name_regex(user_input)))
     user_input = input('Enter Valid EmailId : ')
     logger.debug("{}".format(email_id_regex(user_input)))
+    user_input = input('Enter Valid Mobile Number : ')
+    logger.debug("{}".format(mobile_number_regex(user_input)))
 
 
 def first_name_regex(user_string):
@@ -74,6 +76,25 @@ def email_id_regex(user_string):
            Returns boolean value.
     """
     pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+
+    # re.fullmatch function matches from beginning to end.
+    matches = re.fullmatch(pattern, user_string)
+    if matches:
+        return True
+    else:
+        return False
+
+
+def mobile_number_regex(user_string):
+    """
+       Description:
+           Function is used to check whether the Mobile number of user is valid or not.
+       Parameter:
+          String as a parameter required.
+       Return:
+           Returns boolean value.
+    """
+    pattern = r'([0-9]{2,})+(\s[0-9]{10})+'
 
     # re.fullmatch function matches from beginning to end.
     matches = re.fullmatch(pattern, user_string)
