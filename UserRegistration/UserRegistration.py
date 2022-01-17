@@ -20,6 +20,8 @@ def main():
     """
     user_input = input('Enter Valid First Name : ')
     logger.debug("{}".format(first_name_regex(user_input)))
+    user_input = input('Enter Valid Last Name : ')
+    logger.debug("{}".format(last_name_regex(user_input)))
 
 
 def first_name_regex(user_string):
@@ -35,6 +37,25 @@ def first_name_regex(user_string):
 
     # re.fullmatch function matches from beginning to end.
     matches = re.fullmatch(patt, user_string)
+    if matches:
+        return True
+    else:
+        return False
+
+
+def last_name_regex(user_string):
+    """
+       Description:
+           Function is used to check whether the firstname of the user is valid or not.
+       Parameter:
+          String as a parameter required.
+       Return:
+           Returns boolean value.
+    """
+    pattern = r'^[A-Z][a-z]{3,30}'
+
+    # re.fullmatch function matches from beginning to end.
+    matches = re.fullmatch(pattern, user_string)
     if matches:
         return True
     else:
