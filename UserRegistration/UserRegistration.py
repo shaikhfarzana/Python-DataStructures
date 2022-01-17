@@ -26,9 +26,12 @@ def main():
     logger.debug("{}".format(email_id_regex(user_input)))
     user_input = input('Enter Valid Mobile Number : ')
     logger.debug("{}".format(mobile_number_regex(user_input)))
-    logger.debug('Password must be of minimum 8 character:')
-    user_input = input('Enter Valid Password:')
-    logger.debug("{}".format(password_rule1_regex(user_input)))
+    # logger.debug('Password must be of minimum 8 character:')
+    # user_input = input('Enter Valid Password:')
+    # logger.debug("{}".format(password_rule1_regex(user_input)))
+    logger.debug('Password must be of minimum 8 character and atleast contain 1 uppercase alphabet:')
+    user_input = input('Enter Valid Password: ')
+    logger.debug("{}".format(password_rule2_regex(user_input)))
 
 
 def first_name_regex(user_string):
@@ -118,6 +121,24 @@ def password_rule1_regex(user_string):
     """
     pattern = r'(.{8,})+'
 
+    # re.fullmatch function matches from beginning to end.
+    matches = re.fullmatch(pattern, user_string)
+    if matches:
+        return True
+    else:
+        return False
+
+
+def password_rule2_regex(user_string):
+    """
+       Description:
+           Function is used to check whether the given input is valid or not.
+       Parameter:
+          String as a parameter required.
+       Return:
+           Returns boolean value.
+    """
+    pattern =  r'(?=.*[A-Z]).{8,}'
     # re.fullmatch function matches from beginning to end.
     matches = re.fullmatch(pattern, user_string)
     if matches:
